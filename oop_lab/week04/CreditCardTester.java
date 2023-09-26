@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Creditcard {
+class CreditCard {
     private String name;
     private String cardNo;
     private boolean enabled;
@@ -10,7 +10,7 @@ class Creditcard {
     double creditLimit;
 
     // constructor
-    Creditcard(String nam, String CN, boolean enabled, int PIN, String EM, int CT, double CL) {
+    CreditCard(String nam, String CN, boolean enabled, int PIN, String EM, int CT, double CL) {
         name = nam;
         cardNo = CN;
         this.enabled = enabled;
@@ -165,11 +165,11 @@ class Creditcard {
 public class CreditCardTester {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        Creditcard[] p = new Creditcard[10];
+        CreditCard[] p = new CreditCard[10];
 
-        Creditcard p1 = new Creditcard("Stellin John George", "2022a7ps0003u", true, 1111, "12/12/2026", 1, 1000);
-        Creditcard p2 = new Creditcard("Joe Cijo", "2022a7ps0019u", true, 2222, "12/12/2026", 2, 5000);
-        Creditcard p3 = new Creditcard("BEGAM Yusra Hakim ", "2022a7ps0004u", true, 3333, "12/12/2026", 3, 10000);
+        CreditCard p1 = new CreditCard("Stellin John George", "2022a7ps0003u", true, 1111, "12/12/2026", 1, 1000);
+        CreditCard p2 = new CreditCard("Joe Cijo", "2022a7ps0019u", true, 2222, "12/12/2026", 2, 5000);
+        CreditCard p3 = new CreditCard("BEGAM Yusra Hakim ", "2022a7ps0004u", true, 3333, "12/12/2026", 3, 10000);
         String[] clients = { "2022a7ps0003u", "2022a7ps0019u", "2022a7ps0004u" };
 
         System.out.println("Enter the card number: ");
