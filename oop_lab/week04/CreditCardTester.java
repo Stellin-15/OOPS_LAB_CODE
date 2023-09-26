@@ -21,13 +21,13 @@ class CreditCard {
     }
 
     // getter
-    public int getpin() {
+    public int getPin() {
         return pin;
     }
 
     // pin check
     public void check(int p) {
-        if (getpin() == p) {
+        if (getPin() == p) {
             options();
         } else {
             System.out.println("Entered PIN is wrong");
@@ -46,16 +46,16 @@ class CreditCard {
 
             switch (opt) {
                 case 1:
-                    Display();
+                    display();
                     break;
                 case 2:
-                    changepin();
+                    changePin();
                     break;
                 case 3:
-                    transaction();
+                    transact();
                     break;
                 case 4:
-                    changestatus();
+                    changeStatus();
                     break;
                 case 5:
                     index = 0;
@@ -68,7 +68,7 @@ class CreditCard {
     }
 
     // display function
-    public void Display() {
+    public void display() {
 
         System.out.println("NAME : " + name);
         System.out.println("CARD NUMBER : " + cardNo);
@@ -82,54 +82,48 @@ class CreditCard {
     }
 
     // pin change
-    public void changepin() {
+    public void changePin() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter old pin: ");
         int old_pin = sc.nextInt();
-        if (getpin() == old_pin) {
+        if (getPin() == old_pin) {
             System.out.println("Enter new pin: ");
             int new_pin = sc.nextInt();
 
-            setpin(new_pin);
+            setPin(new_pin);
 
         }
     }
 
     // setter
-    public void setpin(int new_pin) {
+    public void setPin(int new_pin) {
         pin = new_pin;
         System.out.println("The new pin is: " + new_pin);
     }
 
-    public void transaction() {
+    public void transact() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the amount to be withdrawn: ");
         double amount = sc.nextDouble();
 
         if (enabled) {
             if (amount <= creditLimit) {
+                System.out.println("Processing........");
+                System.out.println("please wait!!!!");
+
                 // silver
                 if (cardType == 1) {
                     double charged_amount = amount - (0.01 * amount);
-
-                    System.out.println("Processing........");
-                    System.out.println("please wait!!!!");
                     System.out.println("amount " + charged_amount + " processed sucessfully");
                 }
                 // gold
                 else if (cardType == 2) {
                     double charged_amount = amount - (0.02 * amount);
-
-                    System.out.println("Processing........");
-                    System.out.println("please wait!!!!");
                     System.out.println("amount " + charged_amount + " processed sucessfully");
                 }
                 // platinum
                 else if (cardType == 3) {
                     double charged_amount = amount - (0.03 * amount);
-
-                    System.out.println("Processing........");
-                    System.out.println("please wait!!!!");
                     System.out.println("amount " + charged_amount + " processed sucessfully");
                 }
             } else {
@@ -141,22 +135,22 @@ class CreditCard {
 
     }
 
-    public void changestatus() {
+    public void changeStatus() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("To change the status of your card: ");
         System.out.println("  Enable - 1\n  Disable/Block - 2");
         int num = sc.nextInt();
         if (num == 1) {
-            setstatus(true);
+            setStatus(true);
         } else if (num == 2) {
-            setstatus(false);
+            setStatus(false);
         }
 
     }
 
     // setter for card status
-    public void setstatus(boolean temp) {
+    public void setStatus(boolean temp) {
         enabled = temp;
         System.out.println("The card status is now: " + temp);
     }
