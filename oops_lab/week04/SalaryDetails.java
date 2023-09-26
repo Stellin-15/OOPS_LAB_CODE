@@ -82,7 +82,7 @@ public class SalaryDetails{
             int opt = sc.nextInt();
             
             
-            if(opt == 1){
+
                 sc.nextLine();
             
                 System.out.println("Enter employee id: ");
@@ -95,18 +95,11 @@ public class SalaryDetails{
                 float base = sc.nextFloat();
             
                 e[i]=new Employee(id,Name,dept, base);
-
-                
-                 
-
-             e[i].salarycalculator(base,dept);
-        
-
-            
-         }  
-         for(int j=0;j<n;j++){
-         e[j].display();
-         }
+                e[i].salarycalculator(base,dept);
+             
+    
+         e[i].display();
+         
 
             
             
