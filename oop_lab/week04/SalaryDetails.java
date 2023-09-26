@@ -31,13 +31,13 @@ class Employee {
         System.out.println("employee id: " + ID);
         System.out.println("name: " + name);
         System.out.println("department: " + department);
-        System.out.println(" base salary: " + basic);
+        System.out.println("base salary: " + basic);
         System.out.println("allowance: " + allowance);
         System.out.println("total base salary: " + totalSalary);
 
     }
 
-    public void salarycalculator(double base, int dept) {
+    public void salaryCalculator(double base, int dept) {
 
         double HRA = 0.4 * base;
 
@@ -59,16 +59,12 @@ public class SalaryDetails {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
-        ;
-
         System.out.println("Enter the number of employees: ");
         int n = sc.nextInt();
         Employee[] e = new Employee[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Click 1 for new Employee ");
-            int opt = sc.nextInt();
-
-            sc.nextLine();
+            int opt = sc.nextInt(); sc.nextLine();
 
             System.out.println("Enter employee id: ");
             String id = sc.nextLine();
@@ -80,7 +76,7 @@ public class SalaryDetails {
             float base = sc.nextFloat();
 
             e[i] = new Employee(id, Name, dept, base);
-            e[i].salarycalculator(base, dept);
+            e[i].salaryCalculator(base, dept);
 
             e[i].display();
 
