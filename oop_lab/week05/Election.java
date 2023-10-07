@@ -13,7 +13,7 @@ public class Election {
         for (int i = 0; i < num; i++) {
             if (temp[i] == 1) {
                 Candidate1 += 1;
-            } else if (temp[i] == 2) {
+            } else if (temp[i] == 2) { 
                 Candidate2 += 1;
             } else if (temp[i] == 3) {
                 Candidate3 += 1;
