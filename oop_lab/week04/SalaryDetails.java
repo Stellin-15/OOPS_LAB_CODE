@@ -57,28 +57,32 @@ class Employee {
 
 public class SalaryDetails {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
+        Scanner stellin = new Scanner(System.in);
 
         System.out.println("Enter the number of employees: ");
-        int n = sc.nextInt();
+        int n = stellin.nextInt();
         Employee[] e = new Employee[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Click 1 for new Employee ");
-            int opt = sc.nextInt(); sc.nextLine();
+            int opt = stellin.nextInt();
+            stellin.nextLine();
+            if (opt == 1) {
+                System.out.println("Enter employee id: ");
+                String id = stellin.nextLine();
+                System.out.println("Enter name: ");
+                String Name = stellin.nextLine();
+                System.out.println("Enter employee department:  \n  staff - 1\n  accounts - 2\n  admin - 3");
+                int dept = stellin.nextInt();
+                System.out.println("Enter base salary: ");
+                float base = stellin.nextFloat();
 
-            System.out.println("Enter employee id: ");
-            String id = sc.nextLine();
-            System.out.println("Enter name: ");
-            String Name = sc.nextLine();
-            System.out.println("Enter employee department:  \n  staff - 1\n  accounts - 2\n  admin - 3");
-            int dept = sc.nextInt();
-            System.out.println("Enter base salary: ");
-            float base = sc.nextFloat();
+                e[i] = new Employee(id, Name, dept, base);
+                e[i].salaryCalculator(base, dept);
 
-            e[i] = new Employee(id, Name, dept, base);
-            e[i].salaryCalculator(base, dept);
-
-            e[i].display();
+                e[i].display();
+            } else {
+                break;
+            }
 
         }
     }

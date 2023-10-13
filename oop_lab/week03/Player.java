@@ -15,24 +15,24 @@ class guessGame {
     Player p3 = new Player();
 
     public void startGame() {
-        Scanner sc = new Scanner(System.in);
+        Scanner stellin = new Scanner(System.in);
         int guess[] = new int[3];
 
         for (int i = 0; i < 3; i++) {
             System.out.print("Player " + (i + 1) + " guess: ");
-            guess[i] = sc.nextInt();
+            guess[i] = stellin.nextInt();
         }
         p1.guess(guess[0]);
         p2.guess(guess[1]);
         p3.guess(guess[2]);
     }
 
-    public void check(int winning_number) {
-        if (winning_number == p1.num) {
+    public void check(int winningNumber) {
+        if (winningNumber == p1.num) {
             System.out.println("Player 1 won");
-        } else if (winning_number == p2.num) {
+        } else if (winningNumber == p2.num) {
             System.out.println("Player 2 won");
-        } else if (winning_number == p3.num) {
+        } else if (winningNumber == p3.num) {
             System.out.println("Player 3 won");
         } else
             System.out.println("none ");
@@ -41,13 +41,13 @@ class guessGame {
     public static void main(String args[]) {
 
         Random rand = new Random();
-        int winning_number;
-        winning_number = rand.nextInt(10);
+        int winningNumber;
+        winningNumber = rand.nextInt(10);
 
         guessGame gg = new guessGame();
 
         gg.startGame();
-        gg.check(winning_number);
+        gg.check(winningNumber);
 
     }
 
