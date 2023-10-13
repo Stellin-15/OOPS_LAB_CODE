@@ -2,17 +2,17 @@ import java.util.*;
 
 class SavingsAccount {
     private double savingsBalance;
-    static double annualInterestrate = 0.12;
+    static double annualInterestRate = 0.12;
 
-    SavingsAccount(double currentAmmount) {
-        savingsBalance = currentAmmount;
+    SavingsAccount(double currentAmount) {
+        savingsBalance = currentAmount;
 
     }
 
     public void calculateMonthlyInterest() {
         double interest;
 
-        interest = (savingsBalance * annualInterestrate) / 12;
+        interest = (savingsBalance * annualInterestRate) / 12;
         savingsBalance += interest;
     }
 
@@ -24,29 +24,29 @@ class SavingsAccount {
     public void modifyInterestRate(double rate) {
         double new_rate;
         new_rate = rate / 100;
-        annualInterestrate = new_rate;
+        annualInterestRate = new_rate;
     }
 
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
+        Scanner stellin = new Scanner(System.in);
 
         System.out.println("Enter the number of accounts: ");
-        int num = sc.nextInt();
+        int num = stellin.nextInt();
         SavingsAccount[] p = new SavingsAccount[num];
 
         for (int i = 0; i < num; i++) {
             System.out.println("Enter the current amount in the account: ");
-            double CA = sc.nextDouble();
+            double CA = stellin.nextDouble();
 
             p[i] = new SavingsAccount(CA);
 
             int j = 1;
             while (j != 0) {
                 System.out.println("modify interest rate - 2: \nexit - 1\nnormal interest rate - 3");
-                int index = sc.nextInt();
+                int index = stellin.nextInt();
                 if (index == 2) {
                     System.out.println("Enter the new interest rate: ");
-                    double rate = sc.nextDouble();
+                    double rate = stellin.nextDouble();
                     p[i].modifyInterestRate(rate);
 
                     p[i].calculateMonthlyInterest();
@@ -65,6 +65,7 @@ class SavingsAccount {
             }
 
         }
+
     }
 
 }
