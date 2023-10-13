@@ -2,31 +2,27 @@ import java.util.*;
 
 public class PrintTable {
 
-    public static void print_table(int num)
-    {
-        for(int i = 1;i<=5;i++)
-        {
-            for(int j=1;j<=10;j++)
-            {
-                System.out.print(i*j);
-                System.out.print("\t");
+    public static void printTable(int num) {
+        for (int i = 1; i <= num; i++) {
+            for (int j = 1; j <= 10; j++) {
+                System.out.print((i * j) + "\t");
+
             }
             System.out.println();
+
         }
+
     }
 
-public static void main(String args[])
-{
-    
-    Scanner sc = new Scanner(System.in);
+    public static void main(String args[]) {
 
-    System.out.println("Enter the number: ");
-    int num = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
 
-    print_table(num);
+        System.out.print("Enter the number: ");
+        int num = sc.nextInt();
 
+        printTable(num);
 
+    }
 
-}
-    
 }
